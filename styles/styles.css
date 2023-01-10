@@ -209,6 +209,13 @@ body {
   color: #000000;
 }
 
+.header-search-input::-webkit-search-decoration,
+.header-search-input::-webkit-search-cancel-button,
+.header-search-input::-webkit-search-results-button,
+.header-search-input::-webkit-search-results-decoration {
+  appearance: none;
+}
+
 .header-search-input::placeholder {
   color: #000000;
   opacity: 30%;
@@ -244,6 +251,7 @@ body {
 }
 
 .header-search-input:disabled {
+  background-color: rgba(255, 255, 255, 0);
   pointer-events: none;
   opacity: 30%;
 }
@@ -625,7 +633,7 @@ body {
   padding: 9px 60px 50px 60px;
   background-color: #ffe17f;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   left: 0;
   display: none;
 }
@@ -771,6 +779,12 @@ body {
   opacity: 30%;
 }
 
+.slider-button:disabled {
+  outline: none;
+  opacity: 10%;
+  pointer-events: none;
+}
+
 .popular-product-container {
   padding: 86px 0 0 0;
   z-index: 1;
@@ -843,8 +857,8 @@ body {
 }
 
 .popular-product-advantage-list {
-  margin: 0 0 -20px 0;
-  padding: 0 0 25px 0;
+  margin: 0;
+  padding: 0 0 17px 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -854,9 +868,9 @@ body {
   margin: 0 20px 20px 0;
 }
 
-.popular-product-advantage-item:last-child {
+/*.popular-product-advantage-item:last-child {
   margin: 0;
-}
+}*/
 
 .popular-product-advantage-subtitle {
   display: block;
@@ -881,13 +895,15 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: -32px;
+  margin: -17px;
   padding: 0;
 }
 
 .slider-pagination-item {
+  display: inline-flex;
   margin: 0 20px 0 0;
   z-index: 2;
+  align-self: flex-start;
 }
 
 .slider-pagination-item:last-child {
@@ -939,15 +955,19 @@ body {
   opacity: 30%;
 }
 
+.slider-pagination-button:disabled {
+  opacity: 10%;
+  pointer-events: none;
+}
+
 .slider-pagination-button-current {
   background-color: #000000;
-  pointer-events: none;
 }
 
 /*Карточки типов продуктов*/
 
 .products {
-  padding: 99px 0 89px 0;
+  padding: 88px 0 89px 0;
 }
 
 .products-list {
@@ -1446,6 +1466,10 @@ body {
   opacity: 30%;
 }
 
+.subscribe-input-error {
+  border-bottom: 3px solid #ff3d3d;
+}
+
 .subscribe-button {
   font-family: "raleway", sans-serif;
   font-size: 18px;
@@ -1567,9 +1591,9 @@ body {
 .menu-footer-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 58px 0;
+  margin: 0 0 57px 0;
   padding: 0;
-  max-width: 460px;
+  max-width: 486px;
 }
 
 .menu-footer-item {
@@ -2026,8 +2050,10 @@ body {
   opacity: 30%;
 }
 
-.control:disabled {
+.control-input:disabled ~ .control-mark,
+.control-input:disabled ~ .control-label {
   opacity: 10%;
+  pointer-events: none;
 }
 
 .control-item-radio {
@@ -2069,6 +2095,11 @@ body {
   outline: 2px solid #af4fff;
   top: -4px;
   left: -4px;
+}
+
+.control-input:disabled ~ .control-mark-radio {
+  opacity: 10%;
+  pointer-events: none;
 }
 
 .control-item:last-child {
@@ -2139,6 +2170,9 @@ body {
   display: block;
   width: 30px;
   height: 30px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }
 
 .order-link-ascending::after {
@@ -2170,6 +2204,7 @@ body {
   outline: 2px solid #af4fff;
   outline-offset: 2px;
   opacity: 100%;
+  z-index: 1;
 }
 
 .order-link-ascending:active::after,
@@ -2179,7 +2214,7 @@ body {
 
 .cards-container {
   background-color: #ffffff;
-  padding: 70px 40px 79px 40px;
+  padding: 70px 40px 77px 40px;
   height: calc(100% - 67px);
 }
 
@@ -2373,6 +2408,11 @@ body {
 
 .catalog-products-button:active {
   opacity: 30%;
+}
+
+.catalog-products-button:disabled {
+  opacity: 10%;
+  pointer-events: none;
 }
 
 .pagination-link-container {
@@ -2630,7 +2670,26 @@ body {
 }
 
 .auth-form-input:disabled {
+  background-color: #fbfbfb;
+  border: 2px solid #fbfbfb;
+  color: #a8a8a8;
+  outline: none;
+}
+
+.auth-form-input:disabled::placeholder {
+  color: #e4e4e4;
+}
+
+.input-email:disabled,
+.input-name:disabled {
+  background-color: #f0f0f0;
+  color: #000000;
   opacity: 30%;
+}
+
+.input-email::placeholder,
+.input-name:disabled::placeholder {
+  color: #a8a8a8;
 }
 
 .input-container {
@@ -2735,6 +2794,16 @@ body {
   outline-offset: 0;
 }
 
+.button-minus-plus:disabled {
+  opacity: 30%;
+  pointer-events: none;
+}
+
+.button-minus-plus:disabled::before,
+.button-minus-plus:disabled::after {
+  opacity: 30%;
+}
+
 .field-label-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2775,7 +2844,7 @@ body {
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
   padding: 19px 17px 21px 19px;
   transform: translate(-87px, 10px);
-  z-index: 1;
+  z-index: 2;
 }
 
 .tooltip-text::before {
