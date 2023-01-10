@@ -15,13 +15,13 @@
           <img class="page-header-logo" src="images/device-logo-black.svg" width="145" height="36" alt="Логотип.">
         </span>
         <div class="menu-container">
-          <form class="header-search">
+          <form class="header-search" action="https://echo.htmlacademy.ru/" method="post">
             <label class="header-search-label">
               <span class="visually-hidden">Поиск по сайту</span>
-              <input class="header-search-input" type="search" placeholder="Поиск по сайту">
+              <input class="header-search-input" type="search" name="search-of-site" placeholder="Поиск по сайту">
               <span class="header-search-input-border"></span>
             </label>
-            <button class="header-search-button" type="button">Найти</button>
+            <button class="header-search-button" type="submit">Найти</button>
           </form>
           <ul class="menu-list">
             <li class="menu-item menu-item-come">
@@ -330,6 +330,7 @@
           </div>
 
           <div class="subscribe-form-container">
+            <!-- чтобы посмотреть ошибку, надо добавить subscribe-input класс subscribe-input-error -->
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="subscribe-label">
                 <span class="visually-hidden">E-mail</span>
@@ -386,8 +387,8 @@
           <div class="page-footer-container">
             <a class="contacts-phone-footer" href="tel:88128121212">Тел.: +7 (812) 812-12-12</a>
             <a class="developer-logo-link" href="https://htmlacademy.ru/">
-              <span class="visually-hidden">Переход на сайт htmlacademy.</span>
-              <svg width="115" height="33" viewBox="0 0 115 33" fill="#ffc700" xmlns="http://www.w3.org/2000/svg">
+              <span class="visually-hidden">Логотип разработчика.</span>
+              <svg role="img" aria-label="Переход на сайт htmlacademy." width="115" height="33" viewBox="0 0 115 33" fill="#ffc700" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 12.9V15.5H2.5V12.9H0Z" />
                 <path
                   d="M11.6 4.5C10 4.5 8.8 5.2 8 6.2H7.9V0H5.9V15.5H7.9V10.2C7.9 8.1 9.2 6.6 11.2 6.6C13 6.6 14.1 8 14.1 9.8V15.5H16.1V9.4C16.2 6.4 14.3 4.5 11.6 4.5Z" />
